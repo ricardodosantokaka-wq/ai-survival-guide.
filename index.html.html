@@ -1,0 +1,232 @@
+<!--
+AI Survival Guide — single-file website
+Created for: Jawad Mahmoud (no downloads, free, copy-paste)
+How to use:
+  1) Open this file in the canvas editor and copy everything.
+  2) To publish without downloading any software, paste into a new file named index.html on GitHub (Create repo -> Add file -> Create new file -> paste -> commit) or into Replit (Create repl -> HTML, CSS, JS -> paste into index.html -> Run). See the "Publish & Setup" section on the page for step-by-step.
+Notes: This single HTML file contains all the content, styling and small JavaScript needed. No external libraries required.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Survival Guide — Learn how to deal with AI</title>
+  <meta name="description" content="Practical, safe, easy lessons to help anyone use AI wisely: prompts, privacy, spotting hallucinations, ethics, and real-world tips.">
+  <meta name="author" content="You">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#60a5fa;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e6eef6;background:linear-gradient(180deg,#071428 0%,#0b1630 100%);line-height:1.45}
+    header{padding:28px 20px;display:flex;align-items:center;gap:16px}
+    .logo{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),#7dd3fc);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#06202b}
+    .title{font-size:20px;font-weight:700}
+    nav{margin-left:auto}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-size:14px}
+    main{display:grid;grid-template-columns:1fr;gap:20px;padding:0 20px 60px}
+    .hero{background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:28px;border-radius:12px;display:flex;flex-direction:column;gap:12px}
+    .hero h1{margin:0;font-size:26px}
+    .hero p{margin:0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .card{background:var(--card);border-radius:10px;padding:14px;border:1px solid rgba(255,255,255,0.03)}
+    .card h3{margin:0 0 6px 0}
+    .lesson{cursor:pointer;padding:10px;border-radius:8px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+    .lesson small{color:var(--muted)}
+    details{background:transparent;border-radius:8px}
+    summary{outline:none;cursor:pointer}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#7dd3fc);color:#042033;text-decoration:none;font-weight:700}
+    footer{padding:18px 20px;color:var(--muted);font-size:13px}
+    .prompt-sample{background:#01121a;padding:12px;border-radius:8px;font-family:monospace;font-size:13px}
+    .copy-btn{margin-left:8px;padding:6px 8px;border-radius:6px;border:none;background:rgba(255,255,255,0.03);color:var(--muted);cursor:pointer}
+    .faq p{margin:8px 0;color:var(--muted)}
+    @media(min-width:900px){main{grid-template-columns:1fr 360px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">AI</div>
+    <div>
+      <div class="title">AI Survival Guide</div>
+      <div style="color:var(--muted);font-size:13px">Practical steps to use AI safely and effectively</div>
+    </div>
+    <nav>
+      <a href="#lessons">Lessons</a>
+      <a href="#tutorials">Tutorials</a>
+      <a href="#resources">Resources</a>
+      <a href="#publish">Publish</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero card">
+      <h1>Welcome — Be smart with AI</h1>
+      <p>This site teaches clear, practical steps for anyone who uses AI: how to ask good prompts, protect privacy, spot mistakes (hallucinations), verify results, and use AI ethically. No accounts, no downloads — just lessons you can read and share.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Start here</h3>
+          <p style="color:var(--muted)">Read the first lessons, test the sample prompts, and publish this page (see Publish section) to share with friends.</p>
+        </div>
+        <div class="card">
+          <h3>Who this is for</h3>
+          <p style="color:var(--muted)">Students, parents, teachers, creators, and anyone who wants to use AI without getting tricked or sharing private data.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="lessons" class="card">
+      <h2>Lessons — Quick guides</h2>
+      <div style="margin-top:12px;display:grid;gap:10px">
+        <details class="lesson">
+          <summary><strong>1. Know the limits</strong> <small> — AI can make confident mistakes</small></summary>
+          <div style="margin-top:8px;color:var(--muted)">AI models don't "know" facts the way humans do. They predict text that looks right — sometimes it's wrong. Always verify important facts with reliable sources (official sites, academic articles, trusted news).</div>
+        </details>
+
+        <details class="lesson">
+          <summary><strong>2. Protect your privacy</strong> <small> — don't paste secrets</small></summary>
+          <div style="margin-top:8px;color:var(--muted)">Never share personal IDs, bank details, passwords, or private messages in an AI chat. If you must process sensitive text, remove or anonymize it first. Check the service's privacy policy before uploading anything sensitive.</div>
+        </details>
+
+        <details class="lesson">
+          <summary><strong>3. Ask for sources</strong> <small> — request citations</small></summary>
+          <div style="margin-top:8px;color:var(--muted)">When AI gives facts, ask: "Where did you get that?" or "Give sources." Then verify those sources independently. If the model can't provide verifiable sources, treat the answer as unverified.</div>
+        </details>
+
+        <details class="lesson">
+          <summary><strong>4. Spot hallucinations</strong> <small> — signs an answer is fake</small></summary>
+          <div style="margin-top:8px;color:var(--muted)">Look for overly specific but unverifiable details, confident-sounding answers without sources, or invented quotes. Cross-check unusual claims with trusted sources.</div>
+        </details>
+
+        <details class="lesson">
+          <summary><strong>5. Prompt safely</strong> <small> — how to ask</small></summary>
+          <div style="margin-top:8px;color:var(--muted)">Be clear and specific. Provide context but avoid private data. Use step-by-step prompts and ask the model to think step-by-step when you need careful reasoning.</div>
+        </details>
+
+        <details class="lesson">
+          <summary><strong>6. Use AI responsibly</strong> <small> — ethics and fairness</small></summary>
+          <div style="margin-top:8px;color:var(--muted)">Don't use AI to deceive, impersonate, or produce harmful content. Credit AI when its output is used publicly. Consider bias: AI reflects the data it was trained on.</div>
+        </details>
+      </div>
+    </section>
+
+    <aside class="card" style="height:fit-content">
+      <h3>Tutorials</h3>
+      <div id="tutorials">
+        <h4 style="margin-top:8px">Prompt recipe — write better prompts</h4>
+        <div class="prompt-sample" id="prompt1">You are a helpful assistant. Explain how to check if an AI answer is correct in 5 short steps, suitable for a teenager.</div>
+        <button class="copy-btn" data-clip="#prompt1">Copy prompt</button>
+
+        <h4 style="margin-top:12px">Example — fact check</h4>
+        <div class="prompt-sample" id="prompt2">Verify this fact: "The Eiffel Tower is 330m tall." Provide 3 trustworthy sources and say if it's accurate.</div>
+        <button class="copy-btn" data-clip="#prompt2">Copy prompt</button>
+
+        <h4 style="margin-top:12px">Tool-safe prompt</h4>
+        <div class="prompt-sample" id="prompt3">Summarize this text and remove any names or personal info: [paste text here]</div>
+        <button class="copy-btn" data-clip="#prompt3">Copy prompt</button>
+      </div>
+
+      <h4 style="margin-top:16px">Quick tips</h4>
+      <ul style="color:var(--muted);padding-left:18px;margin:8px 0">
+        <li>Tell the model the role: "You are a fact-checker"</li>
+        <li>Ask for step-by-step when reasoning is needed</li>
+        <li>Ask for sources and then verify</li>
+      </ul>
+    </aside>
+
+    <section id="resources" class="card">
+      <h2>Resources & next steps</h2>
+      <ul style="color:var(--muted);padding-left:18px">
+        <li>Start a short lesson: write 1-3 practical tips per page</li>
+        <li>Create a simple quiz using Google Forms (web) for feedback</li>
+        <li>Collect links to official sources: research papers, government sites</li>
+      </ul>
+      <p style="color:var(--muted);margin-top:10px">Use non-technical language and add examples that people can try on their own.</p>
+    </section>
+
+    <section id="publish" class="card">
+      <h2>Publish & setup — no downloads required</h2>
+      <p style="color:var(--muted)">Pick one of the methods below — all can be done in your browser and are free for simple sites.</p>
+
+      <h3>Option A — GitHub Pages (recommended for control)</h3>
+      <ol style="color:var(--muted);padding-left:18px">
+        <li>Create a free GitHub account at <span style="color:#cbe6ff">github.com</span> (web).</li>
+        <li>Click <strong>New repository</strong>. Name it anything (or <code>username.github.io</code> for a user site).</li>
+        <li>Open the repo, click <strong>Add file → Create new file</strong>. Name it <code>index.html</code>.</li>
+        <li>Paste the entire content of this page (the code you copied from canvas) into that file and commit.</li>
+        <li>Go to <strong>Settings → Pages</strong> (left sidebar). Under "Build and deployment" choose the branch (usually <code>main</code>) and folder <code>/ (root)</code>, then Save.</li>
+        <li>Your site URL will be shown in Pages (example: <code>https://username.github.io/repo-name/</code> or <code>https://username.github.io/</code> for a repo named username.github.io).</li>
+      </ol>
+
+      <h3>Option B — Replit (very easy, instant preview)</h3>
+      <ol style="color:var(--muted);padding-left:18px">
+        <li>Create a free Replit account at <span style="color:#cbe6ff">replit.com</span>.</li>
+        <li>Click <strong>Create</strong> → select "HTML, CSS, JS" template.</li>
+        <li>Open <code>index.html</code> in the editor, replace contents with this page, and click <strong>Run</strong>. Use the "Open in a new tab" or "Share" link to get a public URL.</li>
+      </ol>
+
+      <h3>Option C — Neocities (simple web host)</h3>
+      <ol style="color:var(--muted);padding-left:18px">
+        <li>Sign up at <span style="color:#cbe6ff">neocities.org</span>.</li>
+        <li>Create a new site, open the file editor, create <code>index.html</code>, paste the code, and save. Your site will be at <code>yoursite.neocities.org</code>.</li>
+      </ol>
+
+      <h3>Editing later</h3>
+      <p style="color:var(--muted)">Edit the same index.html in the platform's web editor to change text, add lessons, or update links. Use commit/edit to publish updates.</p>
+
+      <h3>Collect feedback</h3>
+      <p style="color:var(--muted)">Make a quick Google Form (forms.google.com) and link it from this site to collect questions and suggestions. Anyone with the link can respond — no downloads.</p>
+    </section>
+
+    <section class="card">
+      <h2>Site checklist — what to add next</h2>
+      <ul style="color:var(--muted);padding-left:18px">
+        <li>Short beginner lessons (one-per-page or one-per-section)</li>
+        <li>Examples people can copy-paste (prompt recipes)</li>
+        <li>Simple quizzes to test understanding</li>
+        <li>Links to trustworthy sources and further reading</li>
+        <li>Clear statements about privacy and how you collected advice</li>
+      </ul>
+    </section>
+
+    <section class="card faq">
+      <h2>FAQ</h2>
+      <p><strong>Q:</strong> Can I accept messages through this site? <br><strong>A:</strong> You can link to email (mailto:) or use Google Forms. Without a server, the site itself cannot receive emails directly.</p>
+      <p><strong>Q:</strong> Will AI answers be private? <br><strong>A:</strong> Only if the service you use promises privacy. Avoid pasting sensitive data into third-party AIs.</p>
+    </section>
+
+    <section class="card">
+      <h2>Contact</h2>
+      <p style="color:var(--muted)">Share this template, change the text, and make it your own. Want the site in Arabic or a different language? Duplicate and translate the text inside the file.</p>
+      <p><a class="btn" href="mailto:your-email@example.com?subject=AI%20Survival%20Guide">Email me (replace address)</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    Built with a single HTML file — no downloads needed. License: free to use and adapt.
+  </footer>
+
+  <script>
+    // copy buttons
+    document.querySelectorAll('.copy-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const sel = document.querySelector(btn.dataset.clip);
+        if(!sel) return;
+        navigator.clipboard.writeText(sel.textContent || sel.innerText).then(()=>{
+          btn.textContent='Copied!';
+          setTimeout(()=>btn.textContent='Copy prompt',1200);
+        }).catch(()=>{
+          alert('Copy failed. Select and copy manually.');
+        })
+      })
+    })
+
+    // accessible keyboard for details
+    document.querySelectorAll('details').forEach(d=>{
+      d.addEventListener('keydown', e=>{
+        if(e.key==='Enter' || e.key===' '){ e.preventDefault(); d.open = !d.open }
+      })
+    })
+  </script>
+</body>
+</html>
